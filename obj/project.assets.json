@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Nico\\.nuget\\packages\\": {}
+    "C:\\Users\\Romai\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nico\\Desktop\\projetRpgCSharp\\projetRpgCSharp.csproj",
+      "projectUniqueName": "C:\\Users\\Romai\\OneDrive - ifosup\\Programmation orientée objet\\Projet RPG\\CSharpRPG\\projetRpgCSharp.csproj",
       "projectName": "projetRpgCSharp",
-      "projectPath": "C:\\Users\\Nico\\Desktop\\projetRpgCSharp\\projetRpgCSharp.csproj",
-      "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nico\\Desktop\\projetRpgCSharp\\obj\\",
+      "projectPath": "C:\\Users\\Romai\\OneDrive - ifosup\\Programmation orientée objet\\Projet RPG\\CSharpRPG\\projetRpgCSharp.csproj",
+      "packagesPath": "C:\\Users\\Romai\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Romai\\OneDrive - ifosup\\Programmation orientée objet\\Projet RPG\\CSharpRPG\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Romai\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

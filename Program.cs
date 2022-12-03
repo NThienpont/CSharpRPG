@@ -1,10 +1,11 @@
 ﻿// .gitignore
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+ using CSharpRPG.Models;
 
-namespace CSharpRPG
-{
-  
-}
+Person Hero = new Person ("Romain");
+
+Hero.ViewLives();
+Hero.WithdrawLives(5);
+Hero.ViewLives();
+Hero.AddLives(3);
+Hero.ViewLives();
+
