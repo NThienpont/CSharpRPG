@@ -13,3 +13,18 @@ C:\Users\Romai\OneDrive - ifosup\Programmation orientée objet\Projet RPG\CSharp
 C:\Users\Romai\OneDrive - ifosup\Programmation orientée objet\Projet RPG\CSharpRPG\obj\Debug\net6.0\projetRpgCSharp.pdb
 C:\Users\Romai\OneDrive - ifosup\Programmation orientée objet\Projet RPG\CSharpRPG\obj\Debug\net6.0\projetRpgCSharp.genruntimeconfig.cache
 C:\Users\Romai\OneDrive - ifosup\Programmation orientée objet\Projet RPG\CSharpRPG\obj\Debug\net6.0\ref\projetRpgCSharp.dll
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\bin\Debug\net6.0\projetRpgCSharp.exe
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\bin\Debug\net6.0\projetRpgCSharp.deps.json
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\bin\Debug\net6.0\projetRpgCSharp.runtimeconfig.json
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\bin\Debug\net6.0\projetRpgCSharp.dll
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\bin\Debug\net6.0\projetRpgCSharp.pdb
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\obj\Debug\net6.0\projetRpgCSharp.csproj.AssemblyReference.cache
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\obj\Debug\net6.0\projetRpgCSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\obj\Debug\net6.0\projetRpgCSharp.AssemblyInfoInputs.cache
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\obj\Debug\net6.0\projetRpgCSharp.AssemblyInfo.cs
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\obj\Debug\net6.0\projetRpgCSharp.csproj.CoreCompileInputs.cache
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\obj\Debug\net6.0\projetRpgCSharp.dll
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\obj\Debug\net6.0\refint\projetRpgCSharp.dll
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\obj\Debug\net6.0\projetRpgCSharp.pdb
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\obj\Debug\net6.0\projetRpgCSharp.genruntimeconfig.cache
+C:\Users\maury\Documents\Maury_Ifosup\2e_informatique_gestion\programmation orientée objet\projet_rpg_poo\CSharpRPG\obj\Debug\net6.0\ref\projetRpgCSharp.dll

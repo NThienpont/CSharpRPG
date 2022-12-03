@@ -18,21 +18,9 @@ namespace CSharpRPG.Models
         public int Live {get; private set;}
         public string View { get; private set; }
     
-        public void ViewLives (){
-            string viewlives = string.Concat(Enumerable.Repeat("♥ ",Live));
-            Console.WriteLine(viewlives);
-        }
-        public void AddLives (int addlive){
-            if (Live+addlive > 10){
-                Live = 10; 
-            }
-            Live= Live+addlive;
-        }
-        public void WithdrawLives (int withdrawlive){
-            if (Live-withdrawlive <0){
-                Live = 0; 
-            }
-            Live= Live-withdrawlive;
+        public void ViewLives (int live){
+            string viewlives = new string('♥', live);
+                Console.WriteLine(viewlives);
         }
 
     }

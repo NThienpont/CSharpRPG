@@ -8,24 +8,32 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Romai\\.nuget\\packages\\": {}
+    "C:\\Users\\maury\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Romai\\OneDrive - ifosup\\Programmation orientée objet\\Projet RPG\\CSharpRPG\\projetRpgCSharp.csproj",
+      "projectUniqueName": "C:\\Users\\maury\\Documents\\Maury_Ifosup\\2e_informatique_gestion\\programmation orientée objet\\projet_rpg_poo\\CSharpRPG\\projetRpgCSharp.csproj",
       "projectName": "projetRpgCSharp",
-      "projectPath": "C:\\Users\\Romai\\OneDrive - ifosup\\Programmation orientée objet\\Projet RPG\\CSharpRPG\\projetRpgCSharp.csproj",
-      "packagesPath": "C:\\Users\\Romai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Romai\\OneDrive - ifosup\\Programmation orientée objet\\Projet RPG\\CSharpRPG\\obj\\",
+      "projectPath": "C:\\Users\\maury\\Documents\\Maury_Ifosup\\2e_informatique_gestion\\programmation orientée objet\\projet_rpg_poo\\CSharpRPG\\projetRpgCSharp.csproj",
+      "packagesPath": "C:\\Users\\maury\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maury\\Documents\\Maury_Ifosup\\2e_informatique_gestion\\programmation orientée objet\\projet_rpg_poo\\CSharpRPG\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Romai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\maury\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -59,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
