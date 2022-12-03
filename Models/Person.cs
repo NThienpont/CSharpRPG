@@ -15,7 +15,7 @@ namespace CSharpRPG.Models
         }
 
         public string Pseudo { get; set; }
-        public double Live {get; private set;}
+        public int Live {get; private set;}
         public string View { get; private set; }
     
     public void ViewLives (int live){
