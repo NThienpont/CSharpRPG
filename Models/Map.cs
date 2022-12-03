@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CSharpRPG.Class
+namespace CSharpRPG.Models
 {
-    public class Person
+    public class Map
     {
         
     }
