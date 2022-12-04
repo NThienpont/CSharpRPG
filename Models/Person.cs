@@ -43,5 +43,9 @@ namespace CSharpRPG.Models
             }
         }
 
+        public override string ToString (){
+            return View;
+        }
+
     }
 }
