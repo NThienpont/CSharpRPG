@@ -4,8 +4,8 @@
 Person Hero = new Person ("Romain");
 
 Hero.ViewLives();
-Hero.WithdrawLives(5);
+Hero.WithdrawLives(15);
 Hero.ViewLives();
-Hero.AddLives(3);
+Hero.AddLives(20);
 Hero.ViewLives();
 
