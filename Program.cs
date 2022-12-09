@@ -1,10 +1,10 @@
 ﻿// .gitignore
 using CSharpRPG.Models;
 
-Person Hero = new Person ("Romain");
+Hero Player = new Hero ("Romain",10,"😊",WeaponList.Sword);
 
-Hero.ViewLives();
-Hero.WithdrawLives(15);
-Hero.ViewLives();
-Hero.AddLives(20);
-Hero.ViewLives();
+Player.ViewLives();
+Player.WithdrawLives(15);
+Player.ViewLives();
+Player.AddLives(20);
+Player.ViewLives();

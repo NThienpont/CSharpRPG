@@ -7,18 +7,15 @@ namespace CSharpRPG.Models;
 
 public class Person
 {
-    public string Pseudo { get; set; }
     public int Live { get; private set; }
     public string View { get; private set; }
+    public Weapon Weapon { get; private set; }
 
-    public Weapon MyWeapon { get; private set; }
-
-    public Person(string pseudo)
+    public Person(int live, string view, Weapon weapon)
     {
-        Pseudo = pseudo;
-        Live = 10;
-        View = "☺";
-        MyWeapon = new Weapon("épée", 3);
+        Live = live;
+        View = view;
+        Weapon = weapon;
     }
 
 

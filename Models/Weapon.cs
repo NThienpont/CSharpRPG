@@ -10,4 +10,9 @@ public class Weapon
         Name = name;
         Damage = damage;
     }
+    public Weapon(Weapon baseWeapon, bool isRusted)
+    {
+        Name = baseWeapon.Name;
+        Damage = isRusted ? baseWeapon.Damage - 1 : baseWeapon.Damage;
+    }
 }

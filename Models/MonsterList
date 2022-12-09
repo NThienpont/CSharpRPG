@@ -1,0 +1,8 @@
+namespace CSharpRPG.Models;
+
+public static class MonsterList
+{
+    public static Monster Zombie => new Monster(9, "🧟", WeaponList.Claw);
+    public static Monster Skeleton => new Monster(8,"💀", WeaponList.RustedSword);
+
+}
