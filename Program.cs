@@ -1,5 +1,5 @@
 ﻿// .gitignore
- using CSharpRPG.Models;
+using CSharpRPG.Models;
 
 Person Hero = new Person ("Romain");
 
@@ -8,5 +8,3 @@ Hero.WithdrawLives(15);
 Hero.ViewLives();
 Hero.AddLives(20);
 Hero.ViewLives();
-
-
