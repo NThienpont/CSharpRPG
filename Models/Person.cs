@@ -7,50 +7,50 @@ namespace CSharpRPG.Models;
 
 public class Person
 {
-    public int Live { get; private set; }
+    public int Life { get; private set; }
     public string View { get; private set; }
     public Weapon Weapon { get; private set; }
 
-    public Person(int live, string view, Weapon weapon)
+    public Person(int life, string view, Weapon weapon)
     {
-        Live = live;
+        Life = life;
         View = view;
         Weapon = weapon;
     }
 
 
-    public void ViewLives()
+    public void ViewLifes()
     {
-        if (Live == 0)
+        if (Life == 0)
         {
             Console.WriteLine("You are dead!");
         }
         else
         {
-            string viewlives = string.Concat(Enumerable.Repeat("♥ ", Live));
-            Console.WriteLine(viewlives);
+            string viewlifes = string.Concat(Enumerable.Repeat("♥ ", Life));
+            Console.WriteLine(viewlifes);
         }
     }
-    public void AddLives(int addlive)
+    public void AddLifes(int addlife)
     {
-        if (Live + addlive >= 10)
+        if (Life + addlife >= 10)
         {
-            Live = 10;
+            Life = 10;
         }
         else
         {
-            Live = Live + addlive;
+            Life = Life + addlife;
         }
     }
-    public void WithdrawLives(int withdrawlive)
+    public void WithdrawLifes(int withdrawlife)
     {
-        if (Live - withdrawlive <= 0)
+        if (Life - withdrawlife <= 0)
         {
-            Live = 0;
+            Life = 0;
         }
         else
         {
-            Live = Live - withdrawlive;
+            Life = Life - withdrawlife;
         }
     }
 

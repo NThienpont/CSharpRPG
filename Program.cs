@@ -1,14 +1,13 @@
 ﻿// .gitignore
 using CSharpRPG.Models;
 
-Hero Player = new Hero("Romain", 10, "☺", WeaponList.Sword);
-Monster Zombie = MonsterList.Zombie;
-Monster Zombie2 = MonsterList.Zombie;
-Monster Skeleton = MonsterList.Skeleton;
+Hero Player = new Hero("Romain", 10, "", WeaponList.Sword);
 
-Player.ViewLives();
-Player.WithdrawLives(15);
-Player.ViewLives();
-Player.AddLives(20);
-Player.ViewLives();
+
+Player.ViewLifes();
+Player.WithdrawLifes(15);
+Player.ViewLifes();
+Player.AddLifes(20);
+Player.ViewLifes();
 Console.WriteLine(Player);
+//test
