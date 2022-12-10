@@ -11,3 +11,4 @@ Player.WithdrawLives(15);
 Player.ViewLives();
 Player.AddLives(20);
 Player.ViewLives();
+Console.WriteLine(Player);
