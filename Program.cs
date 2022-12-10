@@ -1,6 +1,5 @@
 ﻿// .gitignore
 using CSharpRPG.Models;
-using CSharpRPG.Utils;
 
 Hero Player = new Hero ("Romain",10,"🤴", WeaponList.MasterSword);
 //🤴🧙
