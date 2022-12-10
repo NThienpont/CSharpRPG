@@ -1,7 +1,8 @@
 ﻿// .gitignore
 using CSharpRPG.Models;
 
-Hero Player = new Hero ("Romain",10,"", WeaponList.MasterSword);
+Hero Player = new Hero ("Romain",10,"🤴", WeaponList.MasterSword);
+//🤴🧙
 
 Player.ViewLifes();
 Player.WithdrawLifes(15);
