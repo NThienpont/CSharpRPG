@@ -26,14 +26,28 @@ public class Matrix
         { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
         };
 
-    public void ViewMap()
+    public void ViewMap(Hero p)
     {
         for (int i = 0; i < matrix1.GetLength(0); i++)
         {
             Console.WriteLine();
             for (int j = 0; j < matrix1.GetLength(1); j++)
             {
-                Console.Write(matrix1[i, j]);
+                switch (matrix1[i, j])
+                {
+                    case 1:
+                        Console.Write('#');
+                        break;
+                    case 8:
+                        Console.Write('*');
+                        break;
+                    case 9:
+                        Console.Write(p);
+                        break;
+                    default:
+                        Console.Write(' ');
+                        break;
+                }
             }
         }
     }
