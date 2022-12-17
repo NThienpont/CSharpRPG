@@ -2,10 +2,10 @@
 
 public class Matrix
 {
-    public int[,] matrix1 = new int[,] 
+    private int[,] matrix1 = new int[,]
         {
-        { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 
-        { 6, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, 
+        { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+        { 6, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
         { 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1 },
         { 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1 },
         { 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1 },
@@ -28,10 +28,10 @@ public class Matrix
 
     public void ViewMap()
     {
-        for (int i = 0; i < matrix1.Length-1; i++)
+        for (int i = 0; i < matrix1.GetLength(0); i++)
         {
             Console.WriteLine();
-            for (int j = 0; j < matrix1.Length; j++)
+            for (int j = 0; j < matrix1.GetLength(1); j++)
             {
                 Console.Write(matrix1[i, j]);
             }
