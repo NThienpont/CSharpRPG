@@ -1,9 +1,0 @@
-/* namespace CSharpRPG.Models;
-
-public static class HeroList
-{
-    public static Hero Zombie => new Hero(, "🤴", WeaponList.Claw);
-    public static Hero Skeleton => new Hero(RandomUtils.GetRandomBetween(8, 9),"🧙", WeaponList.RustedSword);
-
-}
- */
