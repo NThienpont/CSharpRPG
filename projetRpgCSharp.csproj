@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Models\GDP.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Models\GDP.cs" />
+  </ItemGroup>
+
 </Project>

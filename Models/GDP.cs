@@ -1,15 +1,14 @@
-using System;
-using System.Collections.Generic;
-
+/*
 namespace RPG
 {
-    class Map
+    internal class Map
     {
         // La carte est représentée par une matrice de cellules
         private Cell[,] cells;
 
         // La largeur et la hauteur de la carte en nombre de cellules
         public int Width { get; private set; }
+
         public int Height { get; private set; }
 
         // Constructeur qui initialise la carte en fonction de sa largeur et de sa hauteur
@@ -55,12 +54,15 @@ namespace RPG
                 case Direction.North:
                     y--;
                     break;
+
                 case Direction.East:
                     x++;
                     break;
+
                 case Direction.South:
                     y++;
                     break;
+
                 case Direction.West:
                     x--;
                     break;
@@ -80,7 +82,7 @@ namespace RPG
     }
 
     // Classe représentant une cellule de la carte
-    class Cell
+    internal class Cell
     {
         // Un booléen indiquant si la cellule est un mur ou non
         public bool IsWall { get; set; }
@@ -88,33 +90,35 @@ namespace RPG
         // Un booléen indiquant si la cellule est traversable ou non
         public bool IsPassable { get; set; }
 
-
         // Classe représentant une entité sur la carte
-        class Entity
+        private class Entity
         {
             // Les coordonnées de l'entité sur la carte
             public int X { get; set; }
+
             public int Y { get; set; }
         }
 
         // Classe représentant un objet collectible sur la carte
-        class Item
+        private class Item
         {
             // Les coordonnées de l'objet sur la carte
             public int X { get; set; }
+
             public int Y { get; set; }
         }
 
         // Classe représentant un élément décoratif sur la carte
-        class Decoration
+        private class Decoration
         {
             // Les coordonnées de l'élément décoratif sur la carte
             public int X { get; set; }
+
             public int Y { get; set; }
         }
 
         // Classe principale du jeu
-        class Game
+        private class Game
         {
             // La carte du jeu
             private Map map;
@@ -166,7 +170,7 @@ namespace RPG
         }
 
         // Programme principal qui crée un jeu et ajoute des entités, des objets collectibles et des éléments décoratifs
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // Crée un jeu avec une carte de 20x20 cellules
             Game game = new Game(20, 20);
@@ -306,26 +310,24 @@ namespace RPG
 
                 // Fin de la boucle principale du jeu
             }
+        }
 
-            // Méthode d'affichage de l'interface utilisateur
-            private void RenderUI()
-            {
-                Console.SetCursorPosition(0, map.Height);
-                Console.WriteLine("Objets collectibles restants : {0}", items.Count);
-            }
+        private static void RenderUI()
+        {
+            Console.SetCursorPosition(0, map.Height);
+            Console.WriteLine("Objets collectibles restants : {0}", items.Count);
+        }
 
-            // Méthode d'attente d'une entrée de l'utilisateur
-            private void WaitForInput()
-            {
-                Console.ReadLine();
-            }
+        private static void EndGame()
+        {
+            Console.Clear();
+            Console.WriteLine("Félicitations, vous avez gagné !");
+        }
 
-            // Méthode de fin de jeu
-            private void EndGame()
-            {
-                Console.Clear();
-                Console.WriteLine("Félicitations, vous avez gagné !");
-            }
+        private static void WaitForInput()
+        {
+            Console.ReadLine();
         }
     }
 }
+*/

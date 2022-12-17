@@ -10,6 +10,5 @@ Player.ViewLifes();
 Player.AddLifes(20);
 Player.ViewLifes();
 Console.WriteLine(Player);*/
-
 Matrix Matrix1 = new Matrix();
 Matrix1.ViewMap();
