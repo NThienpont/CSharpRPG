@@ -51,4 +51,17 @@ public class Matrix
             }
         }
     }
+    
+        public void MoveUp(){
+        
+    }
+    public void MoveDown(){
+
+    }
+    public void MoveRight(){
+
+    }
+    public void MoveLeft(){
+
+    }
 }
