@@ -79,7 +79,7 @@ if(fightingStatus==true){
         
     }
     else{
-        Console.WriteLine("Vous êtes en combat ! Vous devez utiliser les commandes de combat.")
+            Console.WriteLine("Vous êtes en combat ! Vous devez utiliser les commandes de combat.");
     }
 }
 else{

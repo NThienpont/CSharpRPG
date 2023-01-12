@@ -10,3 +10,4 @@ public static class HeroList
 }
 
 //comment mettre le pseudo choisis par le jeu en debut de parti???
+*/
