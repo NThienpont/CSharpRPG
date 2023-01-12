@@ -2,6 +2,7 @@ using CSharpRPG.Utils;
 
 namespace CSharpRPG.Models;
 
+/*
 public static class HeroList
 {
     public static Hero Chevalier => new Hero(10, "🤴", WeaponList.MasterStick);
