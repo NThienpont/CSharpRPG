@@ -1,0 +1,333 @@
+/*
+namespace RPG
+{
+    internal class Map
+    {
+        // La carte est représentée par une matrice de cellules
+        private Cell[,] cells;
+
+        // La largeur et la hauteur de la carte en nombre de cellules
+        public int Width { get; private set; }
+
+        public int Height { get; private set; }
+
+        // Constructeur qui initialise la carte en fonction de sa largeur et de sa hauteur
+        public Map(int width, int height)
+        {
+            Width = width;
+            Height = height;
+            cells = new Cell[width, height];
+
+            // Initialise toutes les cellules de la carte avec des valeurs par défaut
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    cells[x, y] = new Cell();
+                }
+            }
+        }
+
+        // Obtient la cellule à une coordonnée donnée
+        public Cell GetCell(int x, int y)
+        {
+            if (x >= 0 && x < Width && y >= 0 && y < Height)
+            {
+                return cells[x, y];
+            }
+            else
+            {
+                // Si les coordonnées sont en dehors de la carte, renvoie une cellule "mur"
+                return Cell.Wall;
+            }
+        }
+
+        // Déplace une entité sur la carte dans une direction donnée
+        public void MoveEntity(Entity entity, Direction direction)
+        {
+            int x = entity.X;
+            int y = entity.Y;
+
+            // Modifie les coordonnées de l'entité en fonction de la direction
+            switch (direction)
+            {
+                case Direction.North:
+                    y--;
+                    break;
+
+                case Direction.East:
+                    x++;
+                    break;
+
+                case Direction.South:
+                    y++;
+                    break;
+
+                case Direction.West:
+                    x--;
+                    break;
+            }
+
+            // Vérifie que la nouvelle position de l'entité est valide (dans la carte et non occupée par un mur)
+            Cell cell = GetCell(x, y);
+            if (!cell.IsWall && cell.Entity == null)
+            {
+                // Si la position est valide, déplace l'entité et met à jour sa position sur la carte
+                entity.X = x;
+                entity.Y = y;
+                cells[entity.X, entity.Y].Entity = entity;
+                cells[x, y].Entity = null;
+            }
+        }
+    }
+
+    // Classe représentant une cellule de la carte
+    internal class Cell
+    {
+        // Un booléen indiquant si la cellule est un mur ou non
+        public bool IsWall { get; set; }
+
+        // Un booléen indiquant si la cellule est traversable ou non
+        public bool IsPassable { get; set; }
+
+        // Classe représentant une entité sur la carte
+        private class Entity
+        {
+            // Les coordonnées de l'entité sur la carte
+            public int X { get; set; }
+
+            public int Y { get; set; }
+        }
+
+        // Classe représentant un objet collectible sur la carte
+        private class Item
+        {
+            // Les coordonnées de l'objet sur la carte
+            public int X { get; set; }
+
+            public int Y { get; set; }
+        }
+
+        // Classe représentant un élément décoratif sur la carte
+        private class Decoration
+        {
+            // Les coordonnées de l'élément décoratif sur la carte
+            public int X { get; set; }
+
+            public int Y { get; set; }
+        }
+
+        // Classe principale du jeu
+        private class Game
+        {
+            // La carte du jeu
+            private Map map;
+
+            // La liste des entités présentes sur la carte
+            private List<Entity> entities;
+
+            // La liste des objets collectibles présents sur la carte
+            private List<Item> items;
+
+            // La liste des éléments décoratifs présents sur la carte
+            private List<Decoration> decorations;
+
+            // Constructeur du jeu qui initialise la carte et les listes d'entités, d'objets collectibles et d'éléments décoratifs
+            public Game(int mapWidth, int mapHeight)
+            {
+                map = new Map(mapWidth, mapHeight);
+                entities = new List<Entity>();
+                items = new List<Item>();
+                decorations = new List<Decoration>();
+            }
+
+            // Ajoute une entité à la liste et à la carte
+            public void AddEntity(Entity entity)
+            {
+                entities.Add(entity);
+                map.GetCell(entity.X, entity.Y).Entity = entity;
+            }
+
+            // Ajoute un objet collectible à la liste et à la carte
+            public void AddItem(Item item)
+            {
+                items.Add(item);
+                map.GetCell(item.X, item.Y).Item = item;
+            }
+
+            // Ajoute un élément décoratif à la liste et à la carte
+            public void AddDecoration(Decoration decoration)
+            {
+                decorations.Add(decoration);
+                map.GetCell(decoration.X, decoration.Y).Decoration = decoration;
+            }
+
+            // Déplace une entité dans une direction donnée
+            public void MoveEntity(Entity entity, Direction direction)
+            {
+                map.MoveEntity(entity, direction);
+            }
+        }
+
+        // Programme principal qui crée un jeu et ajoute des entités, des objets collectibles et des éléments décoratifs
+        private static void Main(string[] args)
+        {
+            // Crée un jeu avec une carte de 20x20 cellules
+            Game game = new Game(20, 20);
+
+            // Crée et ajoute une entité au jeu
+            Entity entity1 = new Entity { X = 5, Y = 5 };
+            game.AddEntity(entity1);
+
+            // Crée et ajoute un objet collectible au jeu
+            Item item1 = new Item { X = 10, Y = 10 };
+            game.AddItem(item1);
+
+            // Crée et ajoute un élément décoratif au jeu
+            Decoration decoration1 = new Decoration { X = 15, Y = 15 };
+            game.AddDecoration(decoration1);
+
+            // Boucle principale du jeu qui gère les entrées de l'utilisateur et met à jour l'état du jeu
+            while (true)
+            {
+                // Lit les entrées de l'utilisateur et déplace l'entité en fonction de la direction choisie
+                Console.WriteLine("Entrez une direction (Z, Q, S, D) pour déplacer l'entité ou O pour quitter :");
+                string input = Console.ReadLine().ToLower();
+                if (input == "o")
+                {
+                    break;
+                }
+                else if (input == "z")
+                {
+                    game.MoveEntity(entity1, Direction.North);
+                }
+                else if (input == "d")
+                {
+                    game.MoveEntity(entity1, Direction.East);
+                }
+                else if (input == "s")
+                {
+                    game.MoveEntity(entity1, Direction.South);
+                }
+                else if (input == "q")
+                {
+                    game.MoveEntity(entity1, Direction.West);
+                }
+
+                // Mise à jour de l'état du jeu (par exemple, déplacement des ennemis
+
+                // Mise à jour de l'état du jeu (par exemple, déplacement des ennemis, vérification des collisions, etc.)
+                UpdateGameState();
+
+                // Affichage de l'état du jeu (par exemple, affichage de la carte et des entités sur la console)
+                RenderGame();
+            }
+
+            // Méthode de mise à jour de l'état du jeu
+            private void UpdateGameState()
+            {
+                // Parcours de la liste des entités et mise à jour de leur état (par exemple, déplacement des ennemis)
+                foreach (Entity entity in entities)
+                {
+                    // Si l'entité est un ennemi, déplace l'ennemi dans une direction aléatoire
+                    if (entity is Enemy)
+                    {
+                        Enemy enemy = (Enemy)entity;
+                        enemy.MoveRandom();
+                    }
+                }
+
+                // Vérification des collisions entre les entités et les objets collectibles
+                foreach (Entity entity in entities)
+                {
+                    foreach (Item item in items)
+                    {
+                        // Si l'entité et l'objet collectible ont les mêmes coordonnées, supprime l'objet collectible de la liste et de la carte
+                        if (entity.X == item.X && entity.Y == item.Y)
+                        {
+                            items.Remove(item);
+                            map.GetCell(item.X, item.Y).Item = null;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Méthode d'affichage de l'état du jeu
+            private void RenderGame()
+            {
+                // Affiche la carte en utilisant des caractères de type "mur" ou "espace" en fonction de la valeur de la propriété IsWall des cellules
+                for (int y = 0; y < map.Height; y++)
+                {
+                    for (int x = 0; x < map.Width; x++)
+                    {
+                        Cell cell = map.GetCell(x, y);
+                        if (cell.IsWall)
+                        {
+                            Console.Write("#");
+                        }
+                        else
+                        {
+                            Console.Write(" ");
+                        }
+                    }
+                    Console.WriteLine();
+                }
+
+                // Affiche les entités sur la carte en utilisant des caractères différents selon le type d'entité
+                foreach (Entity entity in entities)
+                {
+                    if (entity is Player)
+                    {
+                        Console.SetCursorPosition(entity.X, entity.Y);
+                        Console.Write("P");
+                    }
+                    else if (entity is Enemy)
+                    {
+                        Console.SetCursorPosition(entity.X, entity.Y);
+                        Console.Write("E");
+                    }
+                }
+
+                foreach (Item item in items)
+                {
+                    Console.SetCursorPosition(item.X, item.Y);
+                    Console.Write("I");
+                }
+
+                // Affiche les éléments décoratifs sur la carte en utilisant un caractère spécifique
+                foreach (Decoration decoration in decorations)
+                {
+                    Console.SetCursorPosition(decoration.X, decoration.Y);
+                    Console.Write("D");
+                }
+
+                // Affiche l'interface utilisateur avec des informations sur le jeu (par exemple, le nombre d'objets collectibles restants)
+                RenderUI();
+
+                // Attend une entrée de l'utilisateur avant de passer au tour suivant
+                WaitForInput();
+
+                // Fin de la boucle principale du jeu
+            }
+        }
+
+        private static void RenderUI()
+        {
+            Console.SetCursorPosition(0, map.Height);
+            Console.WriteLine("Objets collectibles restants : {0}", items.Count);
+        }
+
+        private static void EndGame()
+        {
+            Console.Clear();
+            Console.WriteLine("Félicitations, vous avez gagné !");
+        }
+
+        private static void WaitForInput()
+        {
+            Console.ReadLine();
+        }
+    }
+}
+*/
