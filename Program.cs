@@ -4,7 +4,7 @@ using CSharpRPG.Models;
 Console.Clear();
 Console.WriteLine("Bienvenue dans ce RPG codé en CSharp ! Veuillez entrer le nom de votre personnage !");
 var name = Console.ReadLine();
-bool game = true;
+
 if(name==""){
     name="Romain";
 }
@@ -26,17 +26,14 @@ interface1.clear();
 interface1.top();
 matrix1.ViewMap(Player);
 interface1.bottom();
-bool fightingStatus = false;
-
-
 
 // Initialisation de la boucle de jeu et des variables de suivi.
-while(game){
+while(matrix1.game){
 var adventureChoice = Console.ReadLine();
 Fight fight1 = new Fight(Player,Monstre);
 
 // Gestion des combats en fonction de l'état de la variable booléenne "fightingstatus".
-if(fightingStatus==true){
+if(matrix1.fightingStatus==true){
     interface1.clear();
     interface1.top();
     interface1.aideCombat();
@@ -75,7 +72,7 @@ fight1.escape();
         Console.WriteLine("Vous avez tué le monstre!");
         System.Console.WriteLine("Pour continuer, appuyer sur une touche");
         Console.ReadLine();
-        fightingStatus=false;
+        matrix1.fightingStatus=false;
         Console.Clear();
         interface1.top();
         matrix1.ViewMap(Player);
