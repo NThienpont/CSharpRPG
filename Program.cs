@@ -16,22 +16,26 @@ System.Console.WriteLine("Vous êtes un héros nommé " + Player.Pseudo+ ". Vous
 System.Console.WriteLine("Appuyez sur une touche pour commencer !");
 System.Console.ReadKey();
 
+
+// Initialisation des variables et objets nécessaires.
 Interface interface1 = new Interface(Player);
 Matrix matrix1 = new Matrix();
 interface1.clear();
 
+// Mise en place de l'interface matrix.
 interface1.top();
 matrix1.ViewMap(Player);
 interface1.bottom();
 bool fightingStatus = false;
 
+
+
+// Initialisation de la boucle de jeu et des variables de suivi.
 while(game){
 var adventureChoice = Console.ReadLine();
 Fight fight1 = new Fight(Player,Monstre);
-int PlayerPositionX = 2;
-int PlayerPositionY = 2;
 
-
+// Gestion des combats en fonction de l'état de la variable booléenne "fightingstatus".
 if(fightingStatus==true){
     interface1.clear();
     interface1.top();
@@ -78,56 +82,21 @@ fight1.escape();
         interface1.bottom();
     }
 }
+
+// Gestion de l'interface et du déplacement sur la map pour le joueur.
 else{
-    if(adventureChoice=="z"){
-//Permettrait de détecter un mur dans la matrice et empêcher le déplacement
-/*if(true){}*/
-//Permettrait de détecter un monstre dans la matrice et lancer le combat
-/*if(true){}*/
-PlayerPositionY=-1;
-System.Console.WriteLine(PlayerPositionY);
-interface1.clear();
-interface1.top();
-matrix1.ViewMap(Player);
-interface1.bottom();
+    if(adventureChoice=="z"||adventureChoice=="q"||adventureChoice=="s"||adventureChoice=="d"){
+    interface1.clear();
+    interface1.top();
+    matrix1.ViewMap(Player);
+    interface1.bottom();
 
-}
-    else if(adventureChoice=="q"){
-//Permettrait de détecter un mur dans la matrice et empêcher le déplacement
-/*if(true){}*/
-//Permettrait de détecter un monstre dans la matrice et lancer le combat
-/*if(true){}*/
-PlayerPositionX =-1;
-Console.WriteLine(PlayerPositionX);    
-interface1.clear();
-interface1.top();
-matrix1.ViewMap(Player);
-interface1.bottom();
-}
-
-    else if(adventureChoice=="s"){
-//Permettrait de détecter un mur dans la matrice et empêcher le déplacement
-/*if(true){}*/
-//Permettrait de détecter un monstre dans la matrice et lancer le combat
-/*if(true){}*/
-PlayerPositionY=+1;
-System.Console.WriteLine(PlayerPositionY);
-interface1.clear();
-interface1.top();
-matrix1.ViewMap(Player);
-interface1.bottom();
-}
-    else if(adventureChoice=="d"){
-//Permettrait de détecter un mur dans la matrice et empêcher le déplacement
-/*if(true){}*/
-//Permettrait de détecter un monstre dans la matrice et lancer le combat
-/*if(true){}*/
-PlayerPositionX =+1;
-Console.WriteLine(PlayerPositionX);
-interface1.clear();
-interface1.top();
-matrix1.ViewMap(Player);
-interface1.bottom();
+    matrix1.Move(adventureChoice);
+    Console.ReadLine();
+    interface1.clear();
+    interface1.top();
+    matrix1.ViewMap(Player);
+    interface1.bottom();
     }
     else{
         Console.WriteLine("Vous êtes sur la carte, vous devez vous déplacer avec les touches ZQSD.");
