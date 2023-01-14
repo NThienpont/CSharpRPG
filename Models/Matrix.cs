@@ -98,7 +98,7 @@ public class Matrix
                 matrix1[tempDestX,tempDestY]=matrix1[PlayerPositionX,PlayerPositionY];
                 matrix1[PlayerPositionX,PlayerPositionY]=0;       
 
-                PlayerPositionX--;    
+                PlayerPositionY--;    
             }
         }
         if(direction=="s"){
