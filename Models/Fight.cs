@@ -7,10 +7,12 @@ public class Fight{
 
     public Hero Hero{get; set;}
     public Monster Monster{get;set;}
+    public bool fightingStatus{get;set;}
 
     public Fight(Hero hero, Monster monster){
         Hero = hero;
         Monster = monster;
+        fightingStatus = false;
     }
 // Attaque simple, permettant attaquant d'un montant égal aux dégats de l'arme du héros//
     public void attack(){

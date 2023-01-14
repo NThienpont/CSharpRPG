@@ -5,7 +5,7 @@ public class Matrix
     private int[,] matrix1 = new int[,]
         {
         { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-        { 6, 9, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+        { 3, 9, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
         { 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1 },
         { 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1 },
         { 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1 },
@@ -30,6 +30,9 @@ public class Matrix
     int PlayerPositionY = 1;
     int tempDestX;
     int tempDestY;
+
+    public bool fightingStatus = false;
+    public bool game = true;
     public void ViewMap(Hero p)
     {
         for (int i = 0; i < matrix1.GetLength(0); i++)
@@ -51,6 +54,9 @@ public class Matrix
                     case 0:
                         Console.Write(" ");
                         break;
+                    case 3:
+                        Console.Write("+");
+                        break;
                     default:
                         Console.Write("|");
                         break;
@@ -59,20 +65,27 @@ public class Matrix
         }
     }
 
+    public void replace(){
+        matrix1[tempDestX,tempDestY]=0;
+    }
     public void Move(string direction){
         if(direction=="z"){
             tempDestX=PlayerPositionX-1;
             tempDestY=PlayerPositionY;
-            System.Console.WriteLine(PlayerPositionX + PlayerPositionY);
             if(matrix1[tempDestX,tempDestY]==1){
                 Console.WriteLine("Deplacement impossible vers un mur !");
             }
             else if(matrix1[tempDestX,tempDestY]==8){
                 Console.WriteLine("Combat initié !");
+                fightingStatus=true;
+                replace();   
+            }
+            else if(matrix1[tempDestX,tempDestY]==3){
+            System.Console.WriteLine("Ceci est l'entrée du donjon, vous ne pouvez pas aller la, la porte est fermé !");
             }
             else if(matrix1[tempDestX,tempDestY]==6){
-            System.Console.WriteLine("Ceci est l'entrée ou la sortie du donjon, vous ne pouvez pas aller la, sinon ca va bugger ^^");
-            }        
+                game=false;
+            }      
             else{
                 matrix1[tempDestX,tempDestY]=matrix1[PlayerPositionX,PlayerPositionY];
                 matrix1[PlayerPositionX,PlayerPositionY]=0;
@@ -82,7 +95,6 @@ public class Matrix
             }
         }
         if(direction=="q"){
-                            System.Console.WriteLine(PlayerPositionX + PlayerPositionY);
             tempDestX=PlayerPositionX;
             tempDestY=PlayerPositionY-1;
             if(matrix1[tempDestX,tempDestY]==1){
@@ -90,10 +102,15 @@ public class Matrix
             }
             else if(matrix1[tempDestX,tempDestY]==8){
                 Console.WriteLine("Combat initié !");
+                fightingStatus=true;
+                replace();              
+            }
+            else if(matrix1[tempDestX,tempDestY]==3){
+            System.Console.WriteLine("Ceci est l'entrée du donjon, vous ne pouvez pas aller la, la porte est fermé !");
             }
             else if(matrix1[tempDestX,tempDestY]==6){
-            System.Console.WriteLine("Ceci est l'entrée ou la sortie du donjon, vous ne pouvez pas aller la, sinon ca va bugger ^^");
-            }
+                game=false;
+            } 
             else{
                 matrix1[tempDestX,tempDestY]=matrix1[PlayerPositionX,PlayerPositionY];
                 matrix1[PlayerPositionX,PlayerPositionY]=0;       
@@ -102,7 +119,6 @@ public class Matrix
             }
         }
         if(direction=="s"){
-                            System.Console.WriteLine(PlayerPositionX + PlayerPositionY);
             tempDestX=PlayerPositionX+1;
             tempDestY=PlayerPositionY;
             if(matrix1[tempDestX,tempDestY]==1){
@@ -110,19 +126,23 @@ public class Matrix
             }
             else if(matrix1[tempDestX,tempDestY]==8){
                 Console.WriteLine("Combat initié !");
+                fightingStatus=true;
+                replace();   
+            }
+            else if(matrix1[tempDestX,tempDestY]==3){
+            System.Console.WriteLine("Ceci est l'entrée du donjon, vous ne pouvez pas aller la, la porte est fermé !");
             }
             else if(matrix1[tempDestX,tempDestY]==6){
-            System.Console.WriteLine("Ceci est l'entrée ou la sortie du donjon, vous ne pouvez pas aller la, sinon ca va bugger ^^");
-            }
+                game=false;
+            } 
             else{
                 matrix1[tempDestX,tempDestY]=matrix1[PlayerPositionX,PlayerPositionY];
                 matrix1[PlayerPositionX,PlayerPositionY]=0; 
 
-                PlayerPositionX+=1;               
+                PlayerPositionX++;               
             }
         }
         if(direction=="d"){
-                            System.Console.WriteLine(PlayerPositionX + PlayerPositionY);
             tempDestX=PlayerPositionX;
             tempDestY=PlayerPositionY+1;
             if(matrix1[tempDestX,tempDestY]==1){
@@ -130,10 +150,15 @@ public class Matrix
             }
             else if(matrix1[tempDestX,tempDestY]==8){
                 Console.WriteLine("Combat initié !");
-                            }
-            else if(matrix1[tempDestX,tempDestY]==6){
-                System.Console.WriteLine("Ceci est l'entrée ou la sortie du donjon, vous ne pouvez pas aller la, sinon ca va bugger ^^");
+                fightingStatus=true;
+                replace();   
             }
+            else if(matrix1[tempDestX,tempDestY]==3){
+                System.Console.WriteLine("Ceci est l'entrée du donjon, vous ne pouvez pas aller la, la porte est fermé !");
+            }
+            else if(matrix1[tempDestX,tempDestY]==6){
+                game=false;
+            } 
             else{
                 matrix1[tempDestX,tempDestY]=matrix1[PlayerPositionX,PlayerPositionY];
                 matrix1[PlayerPositionX,PlayerPositionY]=0; 

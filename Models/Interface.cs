@@ -2,10 +2,12 @@ namespace CSharpRPG.Models;
 
 public class Interface{
 
-    public Hero Hero{get;set;}
+    public Hero Hero;
+    public bool game;
 
     public Interface(Hero hero){
         Hero = hero;
+        game = true;
     }
 
     // Interface du haut du RPG, avec le nom, les HP, et les dégats d'arme du héros
