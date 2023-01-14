@@ -18,7 +18,6 @@ public class Person
         Weapon = weapon;
     }
 
-
     public void ViewLifes()
     {
         if (Life == 0)
@@ -27,21 +26,23 @@ public class Person
         }
         else
         {
-            string viewlifes = string.Concat(Enumerable.Repeat("♥ ", Life));
+            string viewlifes = string.Concat(Enumerable.Repeat("♥ ", Life / 10));
             Console.WriteLine(viewlifes);
         }
     }
+
     public void AddLifes(int addlife)
     {
-        if (Life + addlife >= 10)
+        if (Life + addlife >= 100)
         {
-            Life = 10;
+            Life = 100;
         }
         else
         {
             Life = Life + addlife;
         }
     }
+
     public void WithdrawLifes(int withdrawlife)
     {
         if (Life - withdrawlife <= 0)
@@ -58,5 +59,4 @@ public class Person
     {
         return View;
     }
-
 }
